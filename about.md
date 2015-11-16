@@ -4,12 +4,6 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+<img src="/images/avatar.jpg" alt="Bruno Grande" class="avatar">
 
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jglovier" %} /
-[jekyll-new](https://github.com/jglovier/jekyll-new)
-
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+I am currently undertaking my PhD studies in cancer genomics under the supervision of Ryan Morin. As a computational biologist, I interrogate large sequencing datasets derived from tumour biopsies using a wide range of analytical methods. I'm also involved with several organizations, such as Software Carpentry and the Scientific Programming Study Group at SFU. 
