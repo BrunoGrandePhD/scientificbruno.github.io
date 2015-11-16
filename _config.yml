@@ -16,5 +16,8 @@ url: "http://bgran.de"
 twitter_username: grandebruno
 github_username:  brunogrande
 
+# Post settings
+excerpt_separator: <!--more-->
+
 # Build settings
 markdown: kramdown
