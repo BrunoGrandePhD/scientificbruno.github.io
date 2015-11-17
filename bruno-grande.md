@@ -1,7 +1,7 @@
 ---
 layout: page
-title: About
-permalink: /about/
+title: Bruno Grande
+permalink: /bruno-grande/
 ---
 
 <img src="/images/avatar.jpg" alt="Bruno Grande" class="avatar">
