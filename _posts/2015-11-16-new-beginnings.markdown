@@ -2,7 +2,7 @@
 layout: post
 title:  "New Beginnings"
 date:   2015-11-16 10:52
-categories: general
+tags: [general]
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vestibulum luctus arcu, ac suscipit sapien viverra vel. Maecenas lorem nisl, viverra in sodales ut, vehicula sit amet augue. Morbi a turpis ipsum. Fusce ultricies justo non ligula semper quis gravida leo sodales. Aliquam posuere, ipsum at molestie ullamcorper, mi lectus commodo elit, ut tempus diam dolor sed nisi. Mauris vel tortor libero. 
 
