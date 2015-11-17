@@ -20,4 +20,4 @@ github_username:  brunogrande
 excerpt_separator: <!--more-->
 
 # Build settings
-markdown: kramdown
+markdown: redcarpet
