@@ -156,6 +156,11 @@
         width: -webkit-calc(100% - (#{$spacing-unit} / 2));
         width:         calc(100% - (#{$spacing-unit} / 2));
     }
+
+    .contact-list, 
+    .social-media-list {
+        text-align: left;
+    }
 }
 
 
