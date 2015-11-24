@@ -1,5 +1,24 @@
-- slug: general
-  name: General
+
+- slug: life-hack
+  name: Life Hack
+
+- slug: bug
+  name: Bug
+
+- slug: opinion
+  name: Opinion
 
 - slug: bioinformatics
   name: Bioinformatics
+
+- slug: tutorial
+  name: Tutorial
+
+- slug: python
+  name: Python
+
+- slug: r
+  name: R
+
+- slug: general
+  name: General
