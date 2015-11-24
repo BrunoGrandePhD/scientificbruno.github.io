@@ -20,6 +20,12 @@ defaults:
       type: "posts"
     values:
       comments: true
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      read_more: true
 
 # Build settings
 markdown: kramdown
