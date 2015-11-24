@@ -1,10 +1,3 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
 # Site settings
 title: bgran.de
 email: hey@bgran.de
@@ -12,7 +5,7 @@ description: >
   Chronicles of a biochemist-turned-computational biologist
   working in cancer genomics.
 baseurl: ""
-url: "http://bgran.de/"
+url: "http://bgran.de"
 twitter_username: grandebruno
 github_username:  brunogrande
 
