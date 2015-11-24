@@ -1,8 +1,9 @@
 ---
 layout: post
 title:  "Something New (Not Actually)"
-date:   2015-11-24
+date:   2015-11-23
 tags: [general]
+read_more: false
 ---
 
 I've literally lost count of the number of times I've relaunched my blog. They all ended up being futile attempts at motivating myself to write more. This might very well be another one of those attempts, and this post might end up as another lonely "My First Blog Post". 
