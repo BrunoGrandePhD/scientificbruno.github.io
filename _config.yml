@@ -12,12 +12,21 @@ description: >
   Chronicles of a biochemist-turned-computational biologist
   working in cancer genomics.
 baseurl: ""
-url: "http://bgran.de"
+url: "http://bgran.de/"
 twitter_username: grandebruno
 github_username:  brunogrande
 
 # Post settings
 excerpt_separator: <!--more-->
 
+# Defaults
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      comments: true
+
 # Build settings
-markdown: redcarpet
+markdown: kramdown
