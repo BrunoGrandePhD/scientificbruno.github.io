@@ -9,14 +9,14 @@ tags:    [opinion]
 	<img src="/assets/do-not-disturb.png" alt="Do Not Disturb" class="float-right" width="40%" />
 </a>
 
-Dear Wet Lab People,
+Dear Wet Lab People, 
 
 As a computational biologist, I wish you disturbed us at our workstations with 
 the same caution and reluctance you have towards disturbing other wet lab 
 people doing bench work.
 I have a little theory that you subconsciously extrapolate that your downtime 
 is when you're at the computer to dry lab members.
-Let me remind you that this is **not** the case.
+Let me remind you that this is **not** the case. 
 
 <!--more-->
 
@@ -29,11 +29,11 @@ Otherwise, I lose this mental model and need to recreate it from scratch every
 time I'm disrupted, which is grossly inefficient and increases the risk of 
 software bugs. 
 
-Thank you for your understanding.
+Thank you for your understanding. 
 
 Sincerely, 
 <br>
-Bruno
+Bruno 
 
 P.S. Feel free to use the Do Not Disturb sign 
 ([PDF version](/assets/do-not-disturb.pdf)).
