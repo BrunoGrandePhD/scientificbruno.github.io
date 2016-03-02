@@ -14,7 +14,7 @@ layout: default
         </h2>
         {{ post.excerpt }}
         {% if post.read_more %}
-          <p><a class="read-more-link" href="{{ post.url | prepend: site.baseurl }}">Read more...</a></p>
+          <p class="read-more-paragraph"><a class="read-more-link" href="{{ post.url | prepend: site.baseurl }}">Read more...</a></p>
         {% endif %}
       </li>
     {% endfor %}
