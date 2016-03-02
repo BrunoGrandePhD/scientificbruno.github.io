@@ -47,7 +47,7 @@ img {
     vertical-align: middle;
     margin: 0 0 $border-unit $border-unit;
     border-radius: $border-unit;
-    border: 1px solid $brand-color;
+    // border: 1px solid $brand-color;
 }
 
 
@@ -113,12 +113,13 @@ a {
  * Blockquotes
  */
 blockquote {
-    color: $grey-color;
-    border-left: 4px solid $grey-color-light;
-    padding-left: $spacing-unit / 2;
-    font-size: 18px;
-    letter-spacing: -1px;
+    color: #8E8E8E;
+    padding-left: 15px;
+    font-size: 24px;
+    letter-spacing: -0.03em;
     font-style: italic;
+    padding: 10px 60px;
+    line-height: 1.5em;
 
     > :last-child {
         margin-bottom: 0;
