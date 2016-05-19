@@ -25,3 +25,4 @@ defaults:
 # Build settings
 markdown: kramdown
 permalink: /:title/
+future: true
