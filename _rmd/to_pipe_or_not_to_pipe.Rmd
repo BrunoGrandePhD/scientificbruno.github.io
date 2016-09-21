@@ -1,0 +1,59 @@
+---
+title: "When (Not) to Use Pipes in R"
+author: "Bruno Grande"
+date: "2016-09-21"
+output: 
+  md_document:
+    preserve_yaml: true
+    variant: markdown_github
+layout: post
+tags: [r]
+read_more: false
+---
+
+When I first learned about pipes in R, they seemed like an elegant solution for a common scenario: performing successive data transformations where only the final value is of use. 
+
+Traditionally, this was done...
+
+My familiarity with Unix pipes accelerated my adoption of their R counterpart. Because I was already already leveraging various tidyverse packages—notably dplyr, tidyr and ggplot2—
+
+https://renkun.me/blog/2014/08/08/difference-between-magrittr-and-pipeR.html
+
+http://www.fromthebottomoftheheap.net/2015/06/03/my-aversion-to-pipes/
+
+http://stackoverflow.com/questions/35933272/why-is-using-dplyr-pipe-slower-than-an-equivalent-non-pipe-expression/35935105
+
+```{r}
+library(magrittr)
+library(pipeR)
+
+set.seed(1)
+
+x <- rnorm(1000)
+
+func <- function(x) {
+  as.list(sqrt(abs(x^2)))
+}
+
+func2 <- function(x) {
+  purrr::map(x, ~.x^2 %>% abs() %>% sqrt())
+}
+
+func3 <- function(x) {
+  purrr::map(x, ~.x^2) %>% 
+    purrr:::map(abs) %>% 
+    purrr::map(sqrt)
+}
+
+func4 <- function(x) {
+  purrr::map(x, ~sqrt(abs(.x^2)))
+}
+
+testthat::expect_identical(func(x), func2(x))
+testthat::expect_identical(func(x), func3(x))
+testthat::expect_identical(func(x), func4(x))
+
+microbenchmark::microbenchmark(func(x), func2(x), func3(x), func4(x), times = 10)
+```
+
+**Disclaimer:** I'm by no means an R expert, so I might have gotten something wrong. This post is as much about informing others as it is about collecting people's thoughts on the topic. 
