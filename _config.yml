@@ -24,5 +24,11 @@ defaults:
 
 # Build settings
 markdown: kramdown
+
+kramdown:
+  input: GFM
+
+highlighter: rouge
+
 permalink: /:title/
 future: true
