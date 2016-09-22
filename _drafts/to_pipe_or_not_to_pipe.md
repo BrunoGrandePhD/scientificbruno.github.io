@@ -11,11 +11,44 @@ tags: [r]
 read_more: false
 ---
 
-When I first learned about pipes in R, they seemed like an elegant solution for a common scenario: performing successive data transformations where only the final value is of use.
+When I first learned about pipes in R, they seemed like an elegant solution for a common scenario: performing successive data transformations where only the final value is of interest. Traditionally, this is achieved by either reassigning a variable after each transformation or nesting function calls. Both approaches are demonstrated below for calculating the root mean square of 1000 random numbers.
 
-Traditionally, this was done...
+``` r
+# Ensure reproducibility
+set.seed(1)
 
-My familiarity with Unix pipes accelerated my adoption of their R counterpart. Because I was already already leveraging various tidyverse packages—notably dplyr, tidyr and ggplot2—
+# Generate a vector of 1000 random numbers
+x <- rnorm(1000)
+
+# Traditional approach #1: reassigning a variable
+result <- x^2
+result <- mean(result)
+result <- sqrt(result)
+
+# Traditional approach #2: nesting function calls
+result <- sqrt(mean(x^2))
+```
+
+The first approach is readable but repeats the variable `result` five times instead of the ideal once. The second approach avoids repetition at the expense of readability. I realize `sqrt(mean(x^2))` is not *that* unreadable, but it gets worse with more complex data transformations such as data frame manipulations.
+
+A variant of the first approach changes the variable name at each step. While this technically reduces repetition, you now have to keep track of multiple variable names and it's harder to add a new transformation in the middle.
+
+Now, compare the approaches above with the following alternative using pipes in R. Specifically, I'm using the pipes from the magrittr package. On the surface, it achieves readability without repetition. For those of you who are not familiar with pipes, the general idea is that the result of the left-hand side is passed as the first argument of the right-hand side. For more details on pipes, read the [relevant section](http://r4ds.had.co.nz/pipes.html) in R for Data Science by Hadley Wickam.
+
+``` r
+result <-
+  x^2 %>%
+  mean() %>%
+  sqrt()
+```
+
+My familiarity with Unix pipes and usage of pipe-friendly packages (*e.g.* dplyr, tidyr and ggplot2) accelerated my adoption of magrittr pipes. It quickly became second nature to chain function calls using pipes if I was only interested in the final value. I didn't realize there were any downsides.
+
+*dramatic pause...*
+
+That is, until now!
+
+------------------------------------------------------------------------
 
 <https://renkun.me/blog/2014/08/08/difference-between-magrittr-and-pipeR.html>
 
@@ -24,12 +57,9 @@ My familiarity with Unix pipes accelerated my adoption of their R counterpart. B
 <http://stackoverflow.com/questions/35933272/why-is-using-dplyr-pipe-slower-than-an-equivalent-non-pipe-expression/35935105>
 
 ``` r
-library(magrittr)
 library(pipeR)
 
-set.seed(1)
 
-x <- rnorm(1000)
 
 func <- function(x) {
   as.list(sqrt(abs(x^2)))
@@ -57,15 +87,15 @@ microbenchmark::microbenchmark(func(x), func2(x), func3(x), func4(x), times = 10
 ```
 
     ## Unit: microseconds
-    ##      expr        min         lq        mean     median         uq
-    ##   func(x)     37.882     43.151     48.3112     45.738     57.066
-    ##  func2(x) 132940.456 135694.429 137176.4763 137387.948 138491.903
-    ##  func3(x)   1627.000   1663.744   1783.6085   1710.113   1784.737
-    ##  func4(x)    999.043   1027.069   1034.6976   1030.501   1043.270
+    ##      expr        min         lq        mean      median         uq
+    ##   func(x)     41.908     42.606     49.4351     47.7475     56.753
+    ##  func2(x) 133173.149 137903.038 140116.8976 139130.0255 143514.256
+    ##  func3(x)   1646.813   1660.774   1850.2711   1733.0705   1766.857
+    ##  func4(x)   1041.131   1063.838   1181.3878   1099.4535   1143.328
     ##         max neval cld
-    ##      62.007    10  a 
-    ##  143350.493    10   b
-    ##    2379.833    10  a 
-    ##    1079.469    10  a
+    ##      60.879    10  a 
+    ##  146047.933    10   b
+    ##    2754.023    10  a 
+    ##    1944.439    10  a
 
 **Disclaimer:** I'm by no means an R expert, so I might have gotten something wrong. This post is as much about informing others as it is about collecting people's thoughts on the topic.
