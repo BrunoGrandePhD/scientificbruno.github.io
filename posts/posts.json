@@ -5,13 +5,13 @@
     "description": "Welcome to our new blog, scientificbruno. We hope you enjoy \nreading what we have to say!",
     "author": [
       {
-        "name": "Nora Jones",
-        "url": "https://example.com/norajones"
+        "name": "Bruno Grande",
+        "url": "https://scientificbruno.com"
       }
     ],
     "date": "2018-10-18",
     "categories": [],
     "preview": {},
-    "last_modified": "2018-10-18T17:45:13-07:00"
+    "last_modified": "2018-10-18T17:48:58-07:00"
   }
 ]

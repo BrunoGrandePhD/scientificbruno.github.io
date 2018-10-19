@@ -4,11 +4,10 @@ description: |
   Welcome to our new blog, scientificbruno. We hope you enjoy 
   reading what we have to say!
 author:
-  - name: Nora Jones 
-    url: https://example.com/norajones
-    affiliation: Spacely Sprockets
-    affiliation_url: https://example.com/spacelysprokets
-date: 10-18-2018
+  - name: Bruno Grande
+    url: https://scientificbruno.com
+    affiliation: SFU
+date: 2018-10-18
 output:
   radix::radix_article:
     self_contained: false
